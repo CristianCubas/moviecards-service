@@ -27,6 +27,9 @@ public class Actor {
 
     private String country;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date deadDate;
+
     @ManyToMany(mappedBy = "actors")
 
     @JsonIgnoreProperties("actors") // Añadido
@@ -70,6 +73,14 @@ public class Actor {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Date getDeadDate() {
+        return deadDate;
+    }
+
+    public void setDeadDate(Date deadDate) {
+        this.deadDate = deadDate;
     }
 
     public List<Movie> getMovies() {
