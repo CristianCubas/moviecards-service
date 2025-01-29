@@ -25,25 +25,21 @@ public class ActorController {
     @Autowired
     ActorService actorService;
     
-    // @GetMapping("actors")
     @GetMapping("/actors")
     public List<Actor> getActorsList() {
         return (actorService.getAllActors());
     }
 
-    // @GetMapping("actors/new")
     @PostMapping("/actors")
     public void newActor(@RequestBody Actor actor) {
         actorService.save(actor);
     }
 
-    // @PostMapping("saveActor")
    @PutMapping("/actors")
     public void saveActor(@RequestBody Actor actor) {
         actorService.save(actor);
     }
 
-    // @GetMapping("editActor/{actorId}")
     @GetMapping("actors/{actorId}")
     public Actor editActor(@PathVariable("actorId") Integer actorId) {
         return actorService.getActorById(actorId);

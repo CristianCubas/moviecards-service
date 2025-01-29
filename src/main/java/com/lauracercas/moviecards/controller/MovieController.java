@@ -30,26 +30,21 @@ public class MovieController {
         return (movieService.getAllMovies());
     }
 
-    // @GetMapping("movies/new")
     @PostMapping("/movies")
     public void newMovie(@RequestBody Movie movie) {
         movieService.save(movie);
     }
 
-    // @PostMapping("saveMovie")
     @PutMapping("/movies")
     public void saveMovie(@RequestBody Movie movie) {
         movieService.save(movie);
     }
-
-    // @GetMapping("editMovie/{movieId}")
 
     @GetMapping("movies/{movieId}")
     public Movie editMovie(@PathVariable Integer movieId) {
         return movieService.getMovieById(movieId);
     }
 
-    // Añadido
     @GetMapping("/movies/insc/{idActor}/{idMovie}")
     public void registerCard(@PathVariable("idActor") Integer idActor, @PathVariable("idMovie") Integer idMovie) {
         movieService.registerActorInMovie(idActor, idMovie);
