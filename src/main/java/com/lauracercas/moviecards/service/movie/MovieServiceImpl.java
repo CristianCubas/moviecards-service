@@ -21,10 +21,6 @@ import java.util.Optional;
 @Service
 public class MovieServiceImpl implements MovieService {
 
-    // private final MovieJPA movieJPA;
-    // public MovieServiceImpl(MovieJPA movieJPA) {
-    // this.movieJPA = movieJPA;
-    // }
     @Autowired
     MovieJPA movieJPA;
     @Autowired
@@ -40,10 +36,6 @@ public class MovieServiceImpl implements MovieService {
         return movieJPA.save(movie);
     }
 
-    // @Override
-    // public Movie getMovieById(Integer movieId) {
-    // return movieJPA.getById(movieId);
-    // }
     @Override
     public Movie getMovieById(Integer movieId) {
         Optional<Movie> optional = movieJPA.findById(movieId);
@@ -53,7 +45,6 @@ public class MovieServiceImpl implements MovieService {
         return null;
     }
 
-    // Añadido
     @Override
     public void registerActorInMovie(Integer idActor, Integer idMovie) {
         Optional<Movie> optionalMovie = movieJPA.findById(idMovie);
