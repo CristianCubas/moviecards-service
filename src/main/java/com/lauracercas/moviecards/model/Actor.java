@@ -31,8 +31,7 @@ public class Actor {
     private Date deadDate;
 
     @ManyToMany(mappedBy = "actors")
-
-    @JsonIgnoreProperties("actors") // Añadido
+    @JsonIgnoreProperties("actors")
     private List<Movie> movies;
 
     public Actor() {

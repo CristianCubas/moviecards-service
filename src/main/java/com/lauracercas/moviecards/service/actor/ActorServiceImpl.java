@@ -19,10 +19,6 @@ import java.util.Optional;
 @Service
 public class ActorServiceImpl implements ActorService {
 
-    // private final ActorJPA actorJPA;
-    // public ActorServiceImpl(ActorJPA actorJPA) {
-    // this.actorJPA = actorJPA;
-    // }
     @Autowired
     ActorJPA actorJPA;
 
@@ -36,10 +32,6 @@ public class ActorServiceImpl implements ActorService {
         return actorJPA.save(actor);
     }
 
-    // @Override
-    // public Actor getActorById(Integer actorId) {
-    // return actorJPA.getById(actorId);
-    // }
     @Override
     public Actor getActorById(Integer actorId) {
         Optional<Actor> optional = actorJPA.findById(actorId);
